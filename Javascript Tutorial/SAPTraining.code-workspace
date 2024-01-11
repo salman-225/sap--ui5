@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../SAP-UI5 Tutorial"
+		},
+		{
+			"path": "../Practise_Tutorial"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SAP-UI5 Tutorial"
+	}
+}

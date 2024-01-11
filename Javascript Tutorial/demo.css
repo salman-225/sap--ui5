@@ -1,0 +1,14 @@
+h1{
+    color: Red;
+}
+h2{
+    color: pink;
+    background-color: azure;
+}
+p{
+    color: bisque;
+    border: 12px,medium,solid;
+}
+body{
+    background-color: cadetblue;
+}
