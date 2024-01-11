@@ -1,0 +1,126 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.controller.Form"  xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+     <!-- <Shell backgroundImage="./resources/background4.jpg" logo="./resources/logo2.png"> -->
+    <App id="first">
+	<Page title="Employee Registration Form" id="form">
+                <content>
+                 <VBox>
+                        <f:SimpleForm id="SimpleFormBasic" editable="true" layout="ResponsiveGridLayout"
+                            labelSpanL="4" emptySpanL="4" columnsL="2" adjustLabelSpan="false" >
+                            <f:content>
+                              
+                                 <Label text = "Name" design="Bold" required="true"/>
+                                 <Input value="{table>/firstName}" id="firstnameInput" placeholder="First Name" required="true"/>
+        
+                                 <Input  type="text" placeholder="Middle Name" id="midlenameInput"/>
+       
+                                 
+                                    <Input value="{table>/lastName}" id="lastnameInput" placeholder="Last Name" required="true"/>
+
+                                 <Label text="Father Name " labelFor="input-b" design="Bold" />
+		                 
+                                    <Input value="{table>/fathername}" 	 id="fatherInput" placeholder="Father Name" required="true"/>
+         
+                              <Label text="DateofBirth "  labelFor="dob" design="Bold"/>
+		                      <DatePicker id="dobInput"  value="{table>/dateofbirth}" formatPattern ="short" change="handleChange" class="sapUiSmallMarginBottom"/>
+                        <Label text="Age" labelFor="input-age" design="Bold" />
+		                 
+                                    <Input value="{table>/age}" id="ageInput" placeholder="Age" required="true"/>
+                              <Label labelFor="gender" text="Gender" design="Bold"/>
+		                      <RadioButtonGroup id="gender" width="100%" columns="4">
+                                 <RadioButton id="gender-1" text="Male"  />
+		                         <RadioButton id="gender-2" text="Female"  />
+		                     </RadioButtonGroup>
+
+                             <Label  text="Email ID" labelFor="inputEmail" design="Bold"/>
+			                 <Input id="inputEmail" type="Email" placeholder="Enter email" />
+
+                             <Label  text="Phome Number" labelFor="inputNumber" design="Bold" />
+			                 <Input id="inputNumber" type="Number" placeholder="Enter number"  />
+                             <Label labelFor="Work" text="Type of Work" design="Bold"/>
+		                      <RadioButtonGroup id="work" >
+                                 <RadioButton id="gender-1e" text="Temporary"  />
+		                         <RadioButton id="gender-2s" text="Permanent"  />
+                                 <RadioButton id="gender-3s" text="Freelancing"  />
+		                     </RadioButtonGroup>
+                           
+                             	<Label text="Additional Notes" design="Bold" />
+                             <TextArea
+				id="TextArea" placeholder="Enter text" maxlength="20" change="handleChange" input="handleInput"
+				showExceededText="true"
+				rows="4"
+				ariaLabelledBy="TextAreaLabel"  width="100%"/> 
+                           
+	
+        <Label  text="Mariage Status" labelFor="inputNumber" design="Bold"  />
+						<CheckBox text="Married" name="cb"/>
+						<CheckBox text="Un Married" name="cb"/>
+                        
+
+        <Label  text="Experience" labelFor="input" design="Bold"  />
+		 <Select items="{dropdownModel>/years}" id="joiningCourse">
+       <core:Item key="{dropdownModel>ProductId}" text="{dropdownModel>Name}" />
+       </Select>
+						                              
+                            </f:content>
+                        </f:SimpleForm>
+ 
+                        <!-- Second SimpleForm for Address -->
+<f:SimpleForm id="SimpleFormAddress" editable="true" layout="ResponsiveGridLayout"
+               labelSpanL="4" emptySpanL="4" columnsL="2" adjustLabelSpan="false" title="Address">                            
+                            <f:content>
+                                <Label text="House Number" />
+                                <Input  placeholder="Enter house number" width="250px" />
+                                <Label text="Street" />
+                                <Input placeholder="Street Address" width="250px" />
+                                <Label text="Flat Number" />
+                                <Input placeholder="Enter a Flat Number" width="250px" />
+                               
+                                  <Label text="Country" />
+                                <MultiComboBox id="countryComboBoxAddress" items="{/countries}" selectedKey="{/selectedCountryAddress}"
+    placeholder="Select a country" width="250px"> <core:Item key="{key}" text="{name}" />
+    
+</MultiComboBox>
+                                <Label text="State" />
+                                <ComboBox
+                                    id="stateComboBoxAddress"
+                                    items="{/state}"
+                                    selectedKey="{/selectedStateAddress}"
+                                    placeholder="Select a state" width="250px">
+                                    <core:Item key="{key}" text="{name}" />
+                                </ComboBox>
+                            </f:content>
+                        </f:SimpleForm>
+                 </VBox>
+                </content>
+                <footer>
+                    <Bar design="Footer">
+                        <contentLeft></contentLeft>
+                    </Bar>
+                </footer>
+                  <Button class="sapUiMediumMarginBegin"
+        text="Save" type="Accept"
+        press="save"/>
+ 
+    
+          <Button class="sapUiMediumMarginBegin"
+        text="Checked by"/>
+ 
+          <Button class="sapUiMediumMarginBegin"
+        text="Verify" press="onVerify"/>
+            </Page>
+   
+
+    <Page title="My APP" id="table">
+   
+   
+    <core:Fragment type="XML" fragmentName="app.fragment.EmployeeTable"/>  
+</Page>
+	
+
+
+                	    
+    </App>
+    <!-- </Shell> -->
+</mvc:View>

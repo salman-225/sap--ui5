@@ -1,0 +1,86 @@
+{
+    "_version": "1.58.0",
+    "sap.app": {
+      "id": "app",
+      "i18n": "i18n/i18n.properties",
+      "title": "{{title}}",
+      "description": "{{Description}}",
+      "type": "application",
+      "applicationVersion": {
+        "version": "1.0.0"
+      },
+      "dataSources": {
+        "tabledata": {
+           "uri": "./data/data.json",
+           "type": "JSON"
+        }
+      }
+    },
+    "sap.ui": {
+      "technology": "UI5",
+      "deviceTypes": {
+          "desktop": true,
+          "tablet": true,
+          "phone": true
+      }
+    },
+    "sap.ui5": {
+      "dependencies": {
+        "minUI5Version": "1.108.0",
+        "libs": {
+          "sap.ui.core": {},
+          "sap.m": {}
+        }
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "app.i18n.i18n",
+            "supportedLocales": [""],
+            "fallbackLocale": ""
+          }
+        },
+        "users": {
+          "type": "sap.ui.model.json.JSONModel",
+            "dataSource":"tabledata"
+        }
+      },
+      "rootView": {
+          "viewName": "app.view.App",
+          "type": "XML",
+          "id": "app"
+      },
+      "routing":{
+        "config":{
+            "routerClass":"sap.m.routing.Router",
+            "viewPath":"app.view",
+            "controlId":"app",
+            "controlAggregation":"pages",
+            "viewType":"XML"
+        },
+        "routes":[{
+            "pattern":"",
+            "name":"initial",
+            "target":["initial_page"]
+        },
+        {
+         "pattern":"form",
+         "name":"form",
+         "target":["form"]
+
+         }
+           ],
+           "targets":{
+            "initial_page":{
+                "viewName":"Login"
+            },
+            "form":{
+                "viewName":"Form"
+            }
+            
+           }    
+    }
+      
+    }
+  }

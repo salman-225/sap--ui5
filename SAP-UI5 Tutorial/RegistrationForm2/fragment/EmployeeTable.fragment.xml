@@ -1,0 +1,64 @@
+    <core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+    
+    <SearchField width="100%" search="searchEmployee" /><!--search engine in page-->
+	 <IconTabBar id="idIconTabBar" select=".onFilterSelect">
+     <items>
+  <IconTabFilter
+    icon="sap-icon://employee"
+    text="Age"
+    key="Age" />
+  <IconTabFilter
+    icon="sap-icon://employee"
+    text="Under 18"
+    key="Under18" />
+  <IconTabFilter
+    icon="sap-icon://employee"
+    text="Over 40"
+    key="Over40" />
+    	</items>
+  </IconTabBar>
+     <Table items="{table>/modelData}" id="employeeTable">
+		<headerToolbar>
+			<Toolbar>
+			
+				<Title text="Employee Table" />
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add" text="create" press="createEmployee"/>
+				<Button icon="sap-icon://action-settings" press="openSetting"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Label text="First name"/>
+			</Column>
+            <Column >
+				<Label text="Last name"/>
+			</Column>
+			<Column >
+				<Label text="Father name"/>
+			</Column>
+			<Column >
+				<Label text="Date of Birth"/>
+			</Column>
+			<Column >
+				<Label text="Age"/>
+			</Column>
+			 
+		</columns>
+		<items>
+			<ColumnListItem>
+				<Text text="{table>Firstname}"/>
+					 <Text text="{table>Lastname}"/>
+					  <Text text="{table>Fathername}"/>
+					   <Text text="{table>Dateofbirth}"/>
+					     <!-- <Text text="{table>Age}"/> -->
+						 		<ObjectStatus text="{table>Age}" state="{=${table>Age}>=20 ?'Success':'Error'}" />
+				
+					
+			</ColumnListItem>
+            
+		</items>
+	</Table> 
+    </core:FragmentDefinition> 
