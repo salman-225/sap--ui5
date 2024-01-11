@@ -1,0 +1,39 @@
+    <core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+    
+    <SearchField width="100%" search="searchEmployee" /><!--search engine in page-->
+     <Table  id="employeeTable" items="{employee>/data}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Employee Details" /><!--title of  the table-->
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://action-settings" press="openSetting"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Label text="Full Name"/>
+			</Column>
+	
+            <Column >
+				<Label text="Age"/>
+			</Column>
+			 <Column >
+				<Label text="Projects"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+					<Text text="{parts:[{path:'employee>fname'},{path:'employee>lname'}], formatter:'.formatName'}" />
+					<!-- <Text text="{employee>fname}"/> 
+					<Text text="{employee>lname}"/> -->
+					 <Text text="{employee>age}" />
+					<!-- <ObjectStatus text="{employee>age}" state="{=${employee>age}>=20?'Success':'Error'}" /> -->
+					<Text text="{employee>project}" />
+					
+			</ColumnListItem>
+            
+		</items>
+	</Table> 
+    </core:FragmentDefinition> 

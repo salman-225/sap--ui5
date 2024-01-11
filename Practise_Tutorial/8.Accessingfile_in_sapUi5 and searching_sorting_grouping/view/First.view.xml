@@ -1,0 +1,59 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.controller.First"  xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+     <Shell backgroundImage="./resources/background.jpg" logo="./resources/star.jpg">
+    <App id="app">
+        <Page id="first" title="{i18n>title}">
+            <!-- <Button
+                text="{i18n>text}"
+                press="showText"/>
+                <TextArea value="{/message}" class="sapUiMediumMarginBegin"/> -->
+
+
+                <!--nested view-->
+     <mvc:XMLView viewName="app.view.Second" />  
+
+
+     <!--insted here we write in fragment folder-->
+ <!-- <Table>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Employee Details" />
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Label text="First Name"/>
+			</Column>
+            <Column >
+				<Label text="Second Name"/>
+			</Column>
+            <Column >
+				<Label text="Age"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+					<Text text="mohan" />
+					<Text text="lala"/>
+					<Text text="25" />
+			</ColumnListItem>
+            <ColumnListItem>
+					<Text text="suman" />
+					<Text text="varma"/>
+					<Text text="25" />
+			</ColumnListItem>
+            <ColumnListItem>
+					<Text text="manoj" />
+					<Text text="pande"/>
+					<Text text="25" />
+			</ColumnListItem>
+		</items>
+	</Table>  -->
+
+     
+        </Page>
+        
+    </App>
+    </Shell>
+</mvc:View>
