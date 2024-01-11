@@ -1,0 +1,12 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.controller.Second"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+   
+            <Button
+                text="{i18n>text}"
+                press="showText"/>
+                <TextArea value="{/message}" class="sapUiMediumMarginBegin"/>
+       
+        
+    
+</mvc:View>
