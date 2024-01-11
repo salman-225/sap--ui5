@@ -1,0 +1,10 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.controller.BaseController"  xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+     <Shell backgroundImage="./resources/background.jpg" logo="./resources/star.jpg">
+    <App id="app">
+       
+        
+    </App>
+    </Shell>
+</mvc:View>

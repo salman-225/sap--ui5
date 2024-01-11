@@ -1,0 +1,104 @@
+{
+    "_version": "1.58.0",
+    "sap.app": {
+      "id": "app",
+      "i18n": "i18n/i18n.properties",
+      "title": "{{title}}",
+      "description": "{{Description}}",
+      "type": "application",
+      "applicationVersion": {
+        "version": "1.0.0"
+      },
+      "dataSources": {
+        "tabledata": {
+           "uri": "./data/data.json",
+           "type": "JSON"
+        }
+      }
+    },
+    "sap.ui": {
+      "technology": "UI5",
+      "deviceTypes": {
+          "desktop": true,
+          "tablet": true,
+          "phone": true
+      }
+    },
+    "sap.ui5": {
+      "rootView": {
+        "viewName": "app.view.App",
+        "type": "XML",
+        "id": "app"
+    },
+      "dependencies": {
+        "minUI5Version": "1.108.0",
+        "libs": {
+          "sap.ui.core": {},
+          "sap.m": {}
+        }
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "app.i18n.i18n",
+            "supportedLocales": [""],
+            "fallbackLocale": ""
+          }
+        },
+        "employee": {
+          "type": "sap.ui.model.json.JSONModel",
+            "dataSource":"tabledata"
+        }
+      },
+      "routing":{
+        "config":{
+            "routerClass":"sap.m.routing.Router",
+            "viewPath":"app.view",
+            "controlId":"app",
+            "controlAggregation":"pages",
+            "viewType":"XML",
+            "bypassed": {
+              "target": "notFound"
+            }
+
+        },
+        "routes":[{
+            "pattern":"",
+            "name":"initial",
+            "target":["initial_page"]
+        },
+        {
+         "pattern":"create",
+         "name":"create",
+         "target":["create"]
+
+         },
+         {
+          "pattern":"details/{employeeId}",
+          "name":"details",
+          "target":["details"]
+ 
+          }
+        
+           ],
+           "targets":{
+            "initial_page":{
+                "viewName":"First"
+            },
+            "create":{
+                "viewName":"Create"
+            },
+            "details":{
+              "viewName":"EmpDetails"
+            },
+            "notFound": {
+              "viewName":"NotFound"
+            }
+           
+           }    
+    }
+    
+     
+    }
+  }

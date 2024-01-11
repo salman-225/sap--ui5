@@ -1,0 +1,13 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="app.controller.EmpDetails"  
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+    <!-- <page title="Employee Details " showNavButton="true"
+		navButtonPress=".onNavBack"> -->
+       <Text text="this is the employee page of create"/>
+	
+
+   <Text text="{employee>fname}"/>
+    <Text text="{employee>lname}"/>
+    <Text text="{employee>age}"/>
+<!-- </page> -->
+</mvc:View>
