@@ -1,0 +1,35 @@
+    <core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+    
+    
+     <Table items="{/data}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Employee Details" />
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Label text="Full Name"/>
+			</Column>
+            <Column >
+				<Label text="Age"/>
+			</Column>
+			 <Column >
+				<Label text="Projects"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+					<Text text="{parts:[{path:'fname'},{path:'lname'}], formatter:'.formatName'}" /><!--Formaters-->
+					<!-- <Text text="{lname}"/> -->
+					<!-- <Text text="{age}" /> -->
+					<ObjectStatus text="{age}" state="{=${age}>=20?'Success':'Error'}" /> <!--Expression Binding-->
+					<Text text="{project}" />
+					
+			</ColumnListItem>
+            
+		</items>
+	</Table> 
+    </core:FragmentDefinition> 
