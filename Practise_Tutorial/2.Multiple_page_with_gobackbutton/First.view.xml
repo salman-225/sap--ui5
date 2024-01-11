@@ -1,0 +1,16 @@
+<mvc:View   xmlns="sap.m"   xmlns:mvc="sap.ui.core.mvc" controllerName="app.First">
+<App id="app">
+<Page title="My APP" id="first">
+    <Button text= "hi hello"
+    press= "go_to_next_Screen" class="sapUiLargeMargin" />
+</Page>
+<Page id="target"  title="second screen">
+  <Text text="welcome to second screen"/>
+  <Button text= "Go Back"
+    press= "go_back"  class="sapUiLargeMargin"/>
+     
+</Page>
+</App>
+
+</mvc:View>
+<!-- view is only  for ui showcase-->
