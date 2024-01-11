@@ -1,0 +1,16 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  xmlns="sap.m" controllerName="app.controller.Create">
+     <Text text="You are in Create screen"/>
+      <VBox>  
+          <Label text="First Name"/>
+          <Input type="Text" value="{fname}"/>
+          <Label text="Last Name"/>
+          <Input type="Text" value="{lname}"/>
+          <Label text="Age"/>
+          <Input type="Number" value="{age}"/>
+          <Label text="Salary"/>
+          <Input type="Number" value="{salary}"/>
+          <Label text="Email"/>
+          <Input type="Text" value="{email}"/>
+     </VBox> 
+     <Button type="Accept" text='Save Data' press='onSave'></Button>
+</mvc:View>

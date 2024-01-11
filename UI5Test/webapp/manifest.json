@@ -1,0 +1,109 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "app",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{pageTitle}}",
+        "description": "{{description}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "tableData": {
+                "uri": "./data/data.json",
+                "type": "JSON"
+            },
+            "northwind": {
+                "uri": "/v2/odata/v4/employee/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "@sap/ux-app-migrator:freestyle",
+            "version": "1.11.5",
+            "toolsId": "c0445189-55b5-436f-b444-bdb417987830"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "app.view.App",
+            "type": "XML",
+            "id": "app"
+        },
+        "dependencies": {
+            "minVersion": "1.93",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "app.i18n.i18n",
+                    "supportedLocales": [
+                        ""
+                    ],
+                    "fallbackLocale": ""
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "northwind",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                  }
+            }
+        },
+        "routing": {
+            "config": {
+              "routerClass": "sap.m.routing.Router",
+              "viewPath": "app.view",
+              "controlId": "app",
+              "controlAggregation": "pages",
+              "viewType": "XML"
+            },
+            "routes": [{
+                "pattern": "",
+                "name": "initial",
+                "target": ["initial_page"]
+              },
+              {
+                "pattern": "create",
+                "name": "create",
+                "target": ["create"]
+              },
+              {
+                "pattern": "display/{employeeid}",
+                "name": "display",
+                "target": ["display"]
+              } ],
+              "targets": {
+                "initial_page": {
+                  "viewName": "First"
+                },
+                "create": {
+                  "viewName": "Create"
+                },
+                "display": {
+                  "viewName": "Display"
+                }
+              }
+            }
+    }
+}

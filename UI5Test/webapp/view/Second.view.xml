@@ -1,0 +1,12 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="app.controller.Second"
+	xmlns="sap.m">
+        <TextArea value="{i18n>message}" />
+			<Button class ="sapUiMediumMarginBegin"
+					text="{i18n>btnText}"
+					press="onPress"/>
+			<Button class ="sapUiMediumMarginBegin" text="{i18n>btnTxtDialog}" press=".openDialog"/>
+			
+
+    </mvc:View>
